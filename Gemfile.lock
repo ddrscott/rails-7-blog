@@ -1,3 +1,10 @@
+PATH
+  remote: ../act_as_fire_record_beta
+  specs:
+    act_as_fire_record_beta (0.0.11)
+      google-cloud-firestore
+      rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -101,8 +108,80 @@ GEM
     drb (2.2.1)
     error_highlight (0.6.0)
     erubi (1.13.0)
+    faraday (2.12.0)
+      faraday-net_http (>= 2.0, < 3.4)
+      json
+      logger
+    faraday-net_http (3.3.0)
+      net-http
+    faraday-retry (2.2.1)
+      faraday (~> 2.0)
+    gapic-common (0.23.0)
+      faraday (>= 1.9, < 3.a)
+      faraday-retry (>= 1.0, < 3.a)
+      google-protobuf (>= 3.25, < 5.a)
+      googleapis-common-protos (~> 1.6)
+      googleapis-common-protos-types (~> 1.15)
+      googleauth (~> 1.11)
+      grpc (~> 1.65)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    google-cloud-core (1.7.1)
+      google-cloud-env (>= 1.0, < 3.a)
+      google-cloud-errors (~> 1.0)
+    google-cloud-env (2.2.1)
+      faraday (>= 1.0, < 3.a)
+    google-cloud-errors (1.4.0)
+    google-cloud-firestore (2.16.0)
+      bigdecimal (~> 3.0)
+      concurrent-ruby (~> 1.0)
+      google-cloud-core (~> 1.5)
+      google-cloud-firestore-v1 (>= 0.10, < 2.a)
+      rbtree (~> 0.4.2)
+    google-cloud-firestore-v1 (1.1.1)
+      gapic-common (>= 0.21.1, < 2.a)
+      google-cloud-errors (~> 1.0)
+      google-cloud-location (>= 0.7, < 2.a)
+    google-cloud-location (0.8.1)
+      gapic-common (>= 0.21.1, < 2.a)
+      google-cloud-errors (~> 1.0)
+    google-protobuf (4.28.3-aarch64-linux)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.28.3-arm64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.28.3-x86_64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.28.3-x86_64-linux)
+      bigdecimal
+      rake (>= 13)
+    googleapis-common-protos (1.6.0)
+      google-protobuf (>= 3.18, < 5.a)
+      googleapis-common-protos-types (~> 1.7)
+      grpc (~> 1.41)
+    googleapis-common-protos-types (1.16.0)
+      google-protobuf (>= 3.18, < 5.a)
+    googleauth (1.11.2)
+      faraday (>= 1.0, < 3.a)
+      google-cloud-env (~> 2.1)
+      jwt (>= 1.4, < 3.0)
+      multi_json (~> 1.11)
+      os (>= 0.9, < 2.0)
+      signet (>= 0.16, < 2.a)
+    grpc (1.67.0-aarch64-linux)
+      google-protobuf (>= 3.25, < 5.0)
+      googleapis-common-protos-types (~> 1.0)
+    grpc (1.67.0-arm64-darwin)
+      google-protobuf (>= 3.25, < 5.0)
+      googleapis-common-protos-types (~> 1.0)
+    grpc (1.67.0-x86_64-darwin)
+      google-protobuf (>= 3.25, < 5.0)
+      googleapis-common-protos-types (~> 1.0)
+    grpc (1.67.0-x86_64-linux)
+      google-protobuf (>= 3.25, < 5.0)
+      googleapis-common-protos-types (~> 1.0)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.3)
@@ -117,6 +196,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.7.4)
+    jwt (2.9.3)
+      base64
     language_server-protocol (3.17.0.3)
     logger (1.6.1)
     loofah (2.23.1)
@@ -133,6 +214,9 @@ GEM
     mini_portile2 (2.8.7)
     minitest (5.25.1)
     msgpack (1.7.3)
+    multi_json (1.15.0)
+    net-http (0.4.1)
+      uri
     net-imap (0.5.0)
       date
       net-protocol
@@ -151,6 +235,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
+    os (1.1.4)
     parallel (1.26.3)
     parser (3.3.5.0)
       ast (~> 2.4.1)
@@ -200,6 +285,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
+    rbtree (0.4.6)
     rdoc (6.7.0)
       psych (>= 4.0.0)
     regexp_parser (2.9.2)
@@ -243,6 +329,11 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    signet (0.19.0)
+      addressable (~> 2.8)
+      faraday (>= 0.17.5, < 3.a)
+      jwt (>= 1.5, < 3.0)
+      multi_json (~> 1.10)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -265,6 +356,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
+    uri (0.13.1)
     useragent (0.16.10)
     web-console (4.2.1)
       actionview (>= 6.0.0)
@@ -287,11 +379,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  act_as_fire_record_beta!
   bootsnap
   brakeman
   capybara
   debug
   error_highlight (>= 0.4.0)
+  google-cloud-firestore (~> 2.16.0)
   importmap-rails
   jbuilder
   puma (>= 5.0)
